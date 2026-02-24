@@ -1,0 +1,15 @@
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\bin\Debug\net8.0\FileDirectory.exe
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\bin\Debug\net8.0\FileDirectory.deps.json
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\bin\Debug\net8.0\FileDirectory.runtimeconfig.json
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\bin\Debug\net8.0\FileDirectory.dll
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\bin\Debug\net8.0\FileDirectory.pdb
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.AssemblyInfo.cs
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.sourcelink.json
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.dll
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\refint\FileDirectory.dll
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.pdb
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\FileDirectory.genruntimeconfig.cache
+C:\Users\Admin\OneDrive\İş masası\Programs\FileDirectory\FileDirectory\obj\Debug\net8.0\ref\FileDirectory.dll
