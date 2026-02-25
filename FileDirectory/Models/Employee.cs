@@ -3,20 +3,18 @@ namespace FileDirectory.Models
 {
 	internal class Employee
 	{
-		private static int ID;
-		public int Id { get; }
+		public int Id { get; set; }
 		public string Name { get; set; }
 		public double Salary {  get; set; }
 		public void ShowInfo()
 		{
-			Console.WriteLine($"Name - {Name}, Salary - {Salary}");
+			Console.WriteLine($"ID - {Id}, Name - {Name}, Salary - {Salary}");
 		}
-		public Employee(string name, double salary)
+		public Employee(string name, double salary, int id)
 		{
 			Name = name;
 			Salary = salary;
-			ID++;
-			Id = ID;
+			Id = id;
 		}
 	}
 }

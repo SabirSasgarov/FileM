@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
+
 
 namespace FileDirectory.Models
 {
@@ -22,27 +17,29 @@ namespace FileDirectory.Models
 		}
 		public void AddEmployee(Employee newEmployee)
 		{
+			using (FileStream fileStreamR = new FileStream(path, FileMode.Open))
+			{
+				using (StreamReader reader = new StreamReader(fileStreamR))
+				{
+					string json = reader.ReadToEnd();
+					Employees = JsonSerializer.Deserialize<List<Employee>>(json);
+				}
+			}
 			Employees.Add(newEmployee);
+			string newJson = JsonSerializer.Serialize(Employees);
+
 			using FileStream fileStream = new FileStream(path, FileMode.Create);
 			using StreamWriter writer = new StreamWriter(fileStream);
-			string newJson = JsonSerializer.Serialize(Employees);
-			writer.WriteLine(newJson);
+			writer.Write(newJson);
 		}
 
 		public Employee GetEmployeeById(int id)
 		{
 			using FileStream fileStream = new FileStream(path, FileMode.Open);
 			using StreamReader reader = new StreamReader(fileStream);
-			string newJson = reader.ReadToEnd();
-			List<Employee>? newList = JsonSerializer.Deserialize<List<Employee>>(newJson);
-			foreach (var item in newList)
-			{
-				if (item.Id == id)
-				{
-					return item;
-				}
-			}
-			return null;
+			string json = reader.ReadToEnd();
+			Employees = JsonSerializer.Deserialize<List<Employee>>(json);
+			return Employees.FirstOrDefault(e=> e.Id == id);
 		}
 
 		public void RemoveEmployee(int id)
@@ -51,27 +48,22 @@ namespace FileDirectory.Models
 			{
 				using (StreamReader reader = new StreamReader(fileStream))
 				{
-					string newJson = reader.ReadToEnd();
-					List<Employee> newList = JsonSerializer.Deserialize<List<Employee>>(newJson);
-					Employees = newList;
-					foreach (var item in newList)
-					{
-						if(id == item.Id)
-						{
-							newList.Remove(item);
-							break;
-						}
-					}
-				}
-				using (FileStream fileStream1 = new FileStream(path, FileMode.Create))
-				{
-					using (StreamWriter writer = new StreamWriter(fileStream1))
-					{
-						string newJson = JsonSerializer.Serialize(Employees);
-						writer.WriteLine(newJson);
-					}
+					string json = reader.ReadToEnd();
+					Employees = JsonSerializer.Deserialize<List<Employee>>(json);
 				}
 			}
+			Employees.Remove(Employees.FirstOrDefault(e => e.Id == id));
+			string newJson = JsonSerializer.Serialize(Employees);
+			using (FileStream fileStream1 = new FileStream(path, FileMode.Create))
+			{
+				using (StreamWriter writer = new StreamWriter(fileStream1))
+				{						
+					writer.Write(newJson);
+				}
+			}
+			
 		}
+
+
 	}
 }

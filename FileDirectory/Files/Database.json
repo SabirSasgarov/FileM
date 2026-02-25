@@ -1,1 +1,37 @@
-[{"Id":5,"Name":"sabir","Salary":1234},{"Id":6,"Name":"salam","Salary":654},{"Id":7,"Name":"sagol","Salary":321}]
+[
+  {
+    "Id": 1,
+    "Name": "sabir",
+    "Salary": 1234
+  },
+  {
+    "Id": 2,
+    "Name": "sabir",
+    "Salary": 20154
+  },
+  {
+    "Id": 3,
+    "Name": "Arzu",
+    "Salary": 8804
+  },
+  {
+    "Id": 4,
+    "Name": "filankes",
+    "Salary": 30000
+  },
+  {
+    "Id": 5,
+    "Name": "deneme",
+    "Salary": 123456
+  },
+  {
+    "Id": 7,
+    "Name": "bunedi",
+    "Salary": 456
+  },
+  {
+    "Id": 8,
+    "Name": "ele bele",
+    "Salary": 123456
+  }
+]

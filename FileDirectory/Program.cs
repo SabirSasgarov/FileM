@@ -1,5 +1,4 @@
 ﻿using FileDirectory.Models;
-using System.Xml.Linq;
 
 namespace FileDirectory
 {
@@ -13,7 +12,7 @@ namespace FileDirectory
 
             Department department = new Department();
 
-
+			Console.WriteLine("1. Add employee\n2. Get employee by id\n3. Remove employee\n0. Quit");
 
             while (true)
             {
@@ -26,20 +25,46 @@ namespace FileDirectory
                         string name = Console.ReadLine();
 						Console.WriteLine("Enter emplyee salary: ");
                         double salary = double.Parse(Console.ReadLine());
-                        Employee newEmployee = new Employee(name, salary);
-                        department.AddEmployee(newEmployee);
-                        break;
+						Console.WriteLine("Enter id: ");
+						int id = int.Parse(Console.ReadLine());
+
+                        try
+                        {
+                            Employee newEmployee = new Employee(name, salary, id);
+                            department.AddEmployee(newEmployee);
+                        }
+						catch (Exception e)
+						{
+							Console.WriteLine(e.Message);
+						}
+						break;
 
                     case "2":
 						Console.WriteLine("Enter book id that you are looking for: ");
-                        int id = int.Parse(Console.ReadLine());
-                        Employee searchedEmployee = department.GetEmployeeById(id);
-                        searchedEmployee.ShowInfo();
-                        break;
+                        int searchId = int.Parse(Console.ReadLine());
+
+                        try
+                        {
+                            Employee searchedEmployee = department.GetEmployeeById(searchId);
+                            searchedEmployee.ShowInfo();
+                        }
+						catch (Exception e)
+						{
+							Console.WriteLine(e.Message);
+						}
+						break;
 
                     case "3":
 						Console.WriteLine("Enter the book id that you want to delete: ");
-                        department.RemoveEmployee(int.Parse(Console.ReadLine()));
+                        int deleteId = int.Parse(Console.ReadLine());
+                        try 
+                        {
+						department.RemoveEmployee(deleteId);
+                        }
+                        catch (Exception e)
+                        {
+							Console.WriteLine(e.Message);
+                        }
                         break;
 
                     case "0":
